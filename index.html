@@ -62,6 +62,7 @@
         function resizeDisplay() {
             var maxW = Math.min(window.innerWidth * 0.98, 1100);
             scaleFactor = maxW / 1100;
+            var s = scaleFactor;
             canvas.css({ width: maxW + "px", height: (680 * s) + "px" });
             wrap.css({ width: maxW + "px", height: (680 * s) + "px" });
             textDiv.css({ left: (188 * s) + "px", top: (80 * s) + "px", width: (272 * s) + "px" });
