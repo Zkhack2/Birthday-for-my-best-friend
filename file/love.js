@@ -169,7 +169,7 @@
             ctx.scale(0.75, 0.75);
             ctx.font = "12px Verdana";
             ctx.fillText("Clique ici :)", 30, -5);
-            ctx.fillText("Meilleure Amie !", 28, 10);
+            ctx.fillText("Meilleure Amie Orokia !", 28, 10);
             ctx.restore();
         },
         clear: function() {
