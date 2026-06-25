@@ -40,10 +40,7 @@
                     <span class="say">Passe la meilleure journée Orokia 🎉🥳</span><br>
                 </div>
             </div>
-            <div id="clock-box">
-                <span id="clock">577 jours 0 heures 0 minutes 0 secondes</span>
-            </div>
-            <div id="message-box"></div>
+
             <canvas id="canvas" width="1100" height="680"></canvas>
         </div>
     </div>
@@ -204,9 +201,6 @@
             $await(flowAnimate());
             $await(moveAnimate());
             textAnimate().start();
-            $("#clock-box").show();
-            timeElapse("2025-06-25");
-            setInterval(function() { timeElapse("2025-06-25"); }, 1000);
         }));
 
         runAsync().start();
