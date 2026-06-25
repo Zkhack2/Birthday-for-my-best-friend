@@ -53,10 +53,10 @@ function timeElapse(date){
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
-	var result = "Days <span class=\"digit\">" + days + "</span> Hours <span class=\"digit\">" + hours + "</span> Minutes <span class=\"digit\">" + minutes; 
+	var result = "Jours <span class=\"digit\">" + days + "</span> Heures <span class=\"digit\">" + hours + "</span> Minutes <span class=\"digit\">" + minutes + "</span> Secondes <span class=\"digit\">" + seconds;
 	$("#clock").html(result);
 
-	var text = "THE WORLD JUST GOT LUCKIER SINCE ";
+	var text = "LE MONDE A PLUS DE CHANCE DEPUIS ";
 	$("#message-box").html(text);
 
 }
