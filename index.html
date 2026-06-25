@@ -52,29 +52,28 @@
         var textDiv = $('#text');
         var clockBox = $('#clock-box');
         var messageBox = $('#message-box');
+        var scaleFactor = 1;
 
         if (!canvas[0].getContext) {
             $("#error").show();
             return false;
         }
 
-        var isMobile = window.innerWidth < 768;
-        var scaleFactor = isMobile ? Math.min(window.innerWidth / 1100, 0.85) : 1;
-        var cw = Math.floor(1100 * scaleFactor);
-        var ch = Math.floor(680 * scaleFactor);
+        function resizeDisplay() {
+            var maxW = Math.min(window.innerWidth * 0.98, 1100);
+            scaleFactor = maxW / 1100;
+            canvas.css({ width: maxW + "px", height: (680 * s) + "px" });
+            wrap.css({ width: maxW + "px", height: (680 * s) + "px" });
+            textDiv.css({ left: (188 * s) + "px", top: (80 * s) + "px", width: (272 * s) + "px" });
+            $(".say").css("font-size", (16 * s) + "px");
+            if (clockBox.length) clockBox.css({ left: (60 * s) + "px", top: (550 * s) + "px" });
+            if (messageBox.length) messageBox.css({ marginTop: (450 * s) + "px", fontSize: (25 * s) + "px" });
+        }
 
         canvas.attr("width", 1100);
         canvas.attr("height", 680);
-        canvas.css({ width: cw + "px", height: ch + "px" });
-        wrap.css({ width: cw + "px", height: ch + "px" });
-
-        if (isMobile) {
-            var s = scaleFactor;
-            textDiv.css({ left: (188 * s) + "px", top: (80 * s) + "px", width: (272 * s) + "px" });
-            clockBox.css({ left: (60 * s) + "px", top: (550 * s) + "px" });
-            messageBox.css({ marginTop: (450 * s) + "px", fontSize: (25 * s) + "px" });
-            $(".say").css("font-size", (16 * s) + "px");
-        }
+        resizeDisplay();
+        $(window).on("resize", resizeDisplay);
 
         var width = 1100;
         var height = 680;
