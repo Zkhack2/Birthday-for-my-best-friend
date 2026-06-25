@@ -48,20 +48,17 @@
             p.x *= n;
             p.y *= n;
             return p;
+            }
         }
     }
 
-    Heart = function() {
-        // x = 16 sin^3 t
-        // y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t
-        // http://www.wolframalpha.com/input/?i=x+%3D+16+sin%5E3+t%2C+y+%3D+(13+cos+t+-+5+cos+2t+-+2+cos+3t+-+cos+4t)
-        var points = [], x, y, t;
-        for (var i = 10; i < 30; i += 0.2) {
-            t = i / Math.PI;
-            x = 16 * Math.pow(Math.sin(t), 3);
-            y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
-            points.push(new Point(x, y));
-        }
+window.random = random;
+window.bezier = bezier;
+window.Point = Point;
+window.Tree = Tree;
+
+})(window);
+
         this.points = points;
         this.length = points.length;
     }
@@ -422,9 +419,17 @@
                 var r = 240, x, y;
                 for (var i = 0; i < random(1,2); i++) {
                     blooms.push(this.createBloom(width / 2 + width, height, r, figure, null, 1, null, 1, new Point(random(-100,600), 720), random(200,300)));
-                }
             }
         }
+    }
+
+    window.random = random;
+    window.bezier = bezier;
+    window.Point = Point;
+    window.Tree = Tree;
+
+})(window);
+
     }
 
     Branch = function(tree, point1, point2, point3, radius, length, branchs) {
@@ -524,4 +529,11 @@
             }
         }
     }
+
+window.random = random;
+window.bezier = bezier;
+window.Point = Point;
+window.Tree = Tree;
+
+})(window);
 
